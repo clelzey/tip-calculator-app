@@ -24,29 +24,35 @@
 </header>
 <main>
   <div class="calculator">
+    <div class="calculator__inputs">
 
-    Bill
+      <label class="calculator__inputs_titles" for="bill">Bill</label>
+      <input class="calculator__inputs_input bill" id="bill" type="number" min="0" placeholder="0">
 
-    Select Tip %
-    5%
-    10%
-    15%
-    25%
-    50%
-    Custom
+      <p class="calculator__inputs_titles">Select Tip %</p>
+      <div class="calculator__inputs_percentages">
+        <button class="calculator__inputs_percent_btn btn">5%</button>
+        <button class="calculator__inputs_percent_btn btn">10%</button>
+        <button class="calculator__inputs_percent_btn btn btn-active">15%</button>
+        <button class="calculator__inputs_percent_btn btn">25%</button>
+        <button class="calculator__inputs_percent_btn btn">50%</button>
+        <label for="custom-percent" hidden></label>
+        <input class="calculator__inputs_input custom-percent" id="custom-percent" type="number" placeholder="Custom">
+      </div>  <!-- end calculator__input_percentages-->
 
-    Number of People
+      <label class="calculator__inputs_titles" for="num-plp" >Number of People</label>
+      <input class="calculator__inputs_input num-plp" id="num-plp" type="number" min="1" placeholder="0">
+    </div>  <!-- end calculator__inputs-->
     <div class="calculator__results">
       <h3 class="calculator__results_title tip-title">Tip Amount</h3>
       <p class="calculator__results_subtitle tip-subtitle">/ person</p>
-      <h2 class="calculator__results_amount calculated-tip">$4.27</h2>
-
+      <h2 class="calculator__results_amount calculated-tip">$0.00</h2>
       <h3 class="calculator__results_title total-title">Total</h3>
       <p class="calculator__results_subtitle total-subtitle">/ person</p>
-      <h2 class="calculator__results_amount calculated-total">$32.79</h2>
+      <h2 class="calculator__results_amount calculated-total">$0.00</h2>
 
       <button class="calculator__results-reset btn btn-active">RESET</button>
-    </div>
+    </div>  <!-- end calculator__results-->
   </div>
 </main>
 <footer>

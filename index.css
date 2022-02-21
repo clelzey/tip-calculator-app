@@ -51,26 +51,22 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
+/* Header Content */
 .header {
     display: flex;
     justify-content: center;
+    padding: 2.75rem 0;
 }
 
-.title {
-    inline-size: 120px;
-    overflow-wrap: break-word;
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    font-size: 1.5rem;
-    color: var(--clr-drk);
-    opacity: 0.8;
-    margin: 2.5rem auto 2rem;
-}
-
+/* footer Content */
 .attribution {
+    font-size: 11px;
     text-align: center;
     margin: 5px auto;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
 
 .btn {
@@ -82,6 +78,7 @@ input[type=number] {
     font-size: 1.5rem;
     background: var(--clr-drk);
     color: var(--clr-lgt);
+    height: 3rem;
 }
 
 .btn-active {
@@ -99,15 +96,19 @@ input[type=number] {
 }
 
 @media (min-width: 700px) {
+    .header {
+        padding: 8rem 0 5rem;
+    }
+
     .calculator {
         display: flex;
         flex-direction: row;
         width: 90%;
-        max-width: 1000px;
+        max-width: 900px;
         min-height: 100%;
     }
     .calculator__inputs{
-        margin-right: 1rem;
+        padding: .5rem 2rem 0 .5rem ;
         width: 50%;
     }
     .calculator__results{
@@ -154,9 +155,7 @@ input[type=number] {
 .calculator__inputs_percentages {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 3rem);
     grid-gap: 1rem 1rem;
-    margin-bottom: 1.5rem;
 }
 
 .num-plp {
@@ -166,10 +165,9 @@ input[type=number] {
 }
 
 @media (min-width: 700px) {
-    /*.calculator {*/
-    /*    display: flex;*/
-    /*    flex-direction: row;*/
-    /*}*/
+    .calculator__inputs_percentages {
+        grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+    }
 }
 
 .calculator__results {
@@ -190,12 +188,6 @@ input[type=number] {
         "reset     reset";
 }
 
-@media (min-width: 700px) {
-    .calculator__results {
-        grid-template-rows: repeat(5, 1.5rem) 1fr 3rem;
-    }
-}
-
 .calculator__results_title {
     font-size: 1rem;
     color: var(--clr-lgt-gry2);
@@ -210,6 +202,16 @@ input[type=number] {
 .calculator__results_amount {
     text-align: right;
     font-size: 2rem;
+}
+
+@media (min-width: 700px) {
+    .calculator__results {
+        grid-template-rows: repeat(5, 2rem) 1fr 3rem;
+    }
+
+    .calculator__results_amount {
+        font-size: 3rem;
+    }
 }
 
 /* Setting grid positioning */

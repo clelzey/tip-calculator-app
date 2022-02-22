@@ -116,7 +116,7 @@ input[type=number] {
 
 @media (min-width: 700px) {
     .header {
-        padding: 8rem 0 5rem;
+        padding: 10.25rem 0 4.5rem;
     }
 
     .calculator {

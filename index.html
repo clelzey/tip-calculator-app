@@ -15,41 +15,45 @@
 </head>
 <body>
 <header class="header">
-  <img src="./images/logo.svg" alt="">
+  <h1><img src="./images/logo.svg" alt=""></h1>
 </header>
 <main>
   <div class="calculator">
     <div class="calculator__inputs">
 
-      <label class="calculator__inputs_titles" for="bill">Bill</label>
-      <input class="calculator__inputs_input bill" id="bill" type="number" min="0" placeholder="0">
-
+      <div class="calculator__inputs_titles">
+        <label class="calculator__inputs_label" for="bill">Bill</label>
+        <span class="input_error_span">Can't be zero</span>
+      </div>
+      <input class="calculator__inputs_input bill input_error" id="bill" type="number" min="0" placeholder="0">
       <p class="calculator__inputs_titles">Select Tip %</p>
       <div class="calculator__inputs_percentages">
-        <button class="calculator__inputs_percent_btn btn" value="5">5%</button>
-        <button class="calculator__inputs_percent_btn btn" value="10">10%</button>
-        <button class="calculator__inputs_percent_btn btn btn-active" value="15">15%</button>
-        <button class="calculator__inputs_percent_btn btn" value="25">25%</button>
-        <button class="calculator__inputs_percent_btn btn" value="50">50%</button>
+        <button class="calculator__inputs_percent_btn btn tip-percent" value="5">5%</button>
+        <button class="calculator__inputs_percent_btn btn tip-percent" value="10">10%</button>
+        <button class="calculator__inputs_percent_btn btn tip-percent" value="15">15%</button>
+        <button class="calculator__inputs_percent_btn btn tip-percent" value="25">25%</button>
+        <button class="calculator__inputs_percent_btn btn tip-percent" value="50">50%</button>
         <label for="custom-percent" hidden></label>
-        <input class="calculator__inputs_input custom-percent"
+        <input class="calculator__inputs_input custom-percent tip-percent"
                id="custom-percent"
                type="number"
                min="0"
                max="100"
                placeholder="Custom">
       </div>  <!-- end calculator__input_percentages-->
-
-      <label class="calculator__inputs_titles" for="num-plp" >Number of People</label>
-      <input class="calculator__inputs_input num-plp" id="num-plp" type="number" min="1" placeholder="0">
+      <div class="calculator__inputs_titles">
+        <label class="calculator__inputs_label" for="num-plp" >Number of People</label>
+        <span class="input_error_span">Can't be zero</span>
+      </div>
+      <input class="calculator__inputs_input num-plp" id="num-plp" type="number" min="1" placeholder="1">
     </div>  <!-- end calculator__inputs-->
     <div class="calculator__results">
       <h3 class="calculator__results_title tip-title">Tip Amount</h3>
       <p class="calculator__results_subtitle tip-subtitle">/ person</p>
-      <h2 class="calculator__results_amount calculated-tip">$0.00</h2>
+      <h2 class="calculator__results_amount calculated-tip" id="calculated-tip">$0.00</h2>
       <h3 class="calculator__results_title total-title">Total</h3>
       <p class="calculator__results_subtitle total-subtitle">/ person</p>
-      <h2 class="calculator__results_amount calculated-total">$0.00</h2>
+      <h2 class="calculator__results_amount calculated-total" id="calculated-total">$0.00</h2>
 
       <button class="calculator__results-reset btn btn-active">RESET</button>
     </div>  <!-- end calculator__results-->

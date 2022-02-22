@@ -21,7 +21,10 @@
     --clr-lgt-gry: hsl(185, 41%, 84%); /*Light grayish cyan*/
     --clr-lgt-gry2: hsl(189, 41%, 97%); /*Light grayish cyan*/
     --clr-lgt: hsl(0, 0%, 100%); /*white*/
+
+    --clr-error: #D9534F;
 }
+
 html,
 body {
     padding: 0;
@@ -31,10 +34,11 @@ body {
 body {
     background: var(--clr-lgt-gry);
     font-family: var(--ff-primary);
+    font-weight: var(--fw-bold);
     font-size: 24px;
 }
 
-h2, h3, p {
+h1, h2, h3, p {
     padding: 0;
     margin: 0;
 }
@@ -69,6 +73,8 @@ input[type=number] {
     color: hsl(228, 45%, 44%);
 }
 
+/* Button Styling */
+
 .btn {
     border-radius: .25rem;
     border: none;
@@ -86,12 +92,25 @@ input[type=number] {
     color: var(--clr-drk);
 }
 
+.btn:hover{
+    background: var(--clr-lgt-gry);
+    color: var(--clr-drk);
+}
+
+:focus {
+    outline: 2px solid var(--clr-primary);
+    outline-offset: 2px;
+}
+
+/******* Application Styling ********/
+/* Styling for Inputs div */
+
 .calculator {
     background: var(--clr-lgt);
     border-radius: 20px;
     padding: 1.5rem;
     min-height: calc(100vh - 175px);
-    width: 375px; /* set for mobile size */
+    width: 375px;     /* set for mobile size */
     margin: 0 auto;
 }
 
@@ -119,11 +138,13 @@ input[type=number] {
 .calculator__inputs_titles {
     color: var(--clr-drk-gry);
     font-size: 1rem;
-    font-weight: var(--fw-bold);
     margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: space-between;
 }
 
 .calculator__inputs_input {
+    cursor: pointer;
     border: none;
     border-radius: .25rem;
     width: 100%;
@@ -142,8 +163,17 @@ input[type=number] {
     color: var(--clr-drk-gry);
 }
 
-.calculator__inputs_input:focus {
+.calculator__inputs_input:focus,
+.calculator__inputs_input:hover {
     outline-color: var(--clr-primary);
+}
+
+.input_error {
+    border: 2px solid var(--clr-error);
+}
+
+.input_error_span {
+    color: var(--clr-error);
 }
 
 .bill {
@@ -170,6 +200,8 @@ input[type=number] {
     }
 }
 
+/* Styling for Results div */
+
 .calculator__results {
     background: var(--clr-drk);
     color: var(--clr-primary);
@@ -195,7 +227,6 @@ input[type=number] {
 
 .calculator__results_subtitle {
     font-size: .75rem;
-    font-weight: var(--fw-bold);
     color: var(--clr-drk-gry2);
 }
 
@@ -214,7 +245,7 @@ input[type=number] {
     }
 }
 
-/* Setting grid positioning */
+/* Setting grid positioning for Results */
 
 .tip-title {
     grid-area: tip-ttl;
